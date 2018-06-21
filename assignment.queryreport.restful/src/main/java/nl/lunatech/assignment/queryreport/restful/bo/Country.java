@@ -116,7 +116,6 @@ public class Country {
 				", wikipedia_link='" + wikipedia_link + '\'' +
 				", keywords='" + keywords + '\'' +
 				", airports=" + airports.toString() +
-				", airportsize=" + airports.size() +
 				'}';
 	}
 }

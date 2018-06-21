@@ -49,25 +49,24 @@
 				<br>
 				<br>
 				<br>
-				<table class="contenttable" align="center" ng-show = "IsQueryTableVisible">
+				<table align="center" class="contenttable"  ng-show = "IsQueryTableVisible">
 				<tr>
 					<th>Country</th>
-					<th>Airport</th>
-					<th>Runway</th>
+					<th>Airports & Runways</th>
 				</tr>
 				<tr ng-repeat="country in querydata track by $index">
-				<td>{{ country.CountryName }}</td>
+				<td>{{ country.name }}</td>
 				  <td> 
 					<table align="center" class="innertable">
 						<tr>
 							<th>Airport Name</th>
 							<th>Airport Ident</th>
 						</tr>
-						<tr ng-repeat="airport in country.Airports track by $index" cellpadding="0" cellspacing="0">
-							<td>{{ airport.AirportName }}</td>
-							<td>{{ airport.AirportIdent }}</td>
+						<tr ng-repeat="airport in country.airports track by $index" cellpadding="0" cellspacing="0">
+							<td>{{ airport.name }}</td>
+							<td>{{ airport.ident }}</td>
 							<td>
-								table align="center" class="innertable">
+								<table align="center" class="innertable">
 									<tr>
 										<th>Runway Ident</th>
 										<th>Runway Type</th>
@@ -82,7 +81,6 @@
 					</table> 
 					
 				</td>
-				<td></td>
 				</tr>
 				</table>
 

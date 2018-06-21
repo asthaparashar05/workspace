@@ -1,0 +1,175 @@
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-size: 100%;
+}
+body {
+	font-size: 14px;
+    color: #1c2022;
+    font-weight: 500;
+	font-family: 'Karla', sans-serif;
+}
+
+h1{
+	font-size: 30px;
+    font-weight: 900;
+	font-family: 'Karla', sans-serif;
+	float:left; 
+	color:#fff; 
+	margin-left:10px;
+}
+h3{
+	font-size: 18px;
+    color: #1c2022;
+    font-weight: 700;
+	font-family: 'Karla', sans-serif;
+}
+
+.tab {
+    overflow: hidden;
+    line-height: 1.5em;
+    margin-right: 10px;
+    margin-top: 20px;
+    background-color: #b20000
+}
+
+/* Style the buttons that are used to open the tab content */
+.navtab {
+    overflow: hidden;
+    line-height: 1.5em;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.navtab button {
+    background-color: #fff;
+    border: none;
+    float: left;
+    border-bottom: 3px solid #fff;
+    outline: none;
+    cursor: pointer;    
+    padding: 0 0 2px 0;
+    margin: 20px 40px 15px;
+    transition: 0.3s;
+    font-size: 15px;
+    color: #808588;
+    font-family: "Karla",sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/* Change background color of buttons on hover */
+.navtab button:hover {
+    border-bottom: 3px solid #e64343;
+    font-size: 15px;
+    color: #181818;
+    font-family: Karla, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Create an active/current tablink class */
+.navtab button.active {
+     border-bottom: 3px solid #e64343;
+     font-size: 15px;
+     color: #181818;
+     font-family: Karla, sans-serif;
+     font-weight: 700;
+     text-transform: uppercase;
+}
+/* Style the tab content */
+.tabcontent {
+    border: none;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.tabcontent table, th, td{
+    border: #181818;
+    align: center;
+}
+
+.tabcontent input[type="text"] {
+    padding: 8px 2px 7px 2px;
+    width: 250px;
+    margin: 10px 10px;
+    float: none;
+    border-radius: 0;
+    border: 1px solid #d7d7d7;
+    line-height: 21px;
+    height: 20px;
+    color: #a5a5a5;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Avenir Next', serif;
+}
+
+/* Change background color of buttons on hover */
+.tabcontent button {
+    padding: 5px 17px;
+    margin-left: 0;
+    float: none;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    height: 40px;
+    font-size: 14px;
+    color: #1c2022;
+    font-weight: 700;
+    border: 2px solid #1c2022;
+    background: none;
+    border-radius: 0;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: normal;
+    overflow: visible;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.tabcontent button:hover {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #e64343;
+    border: none;
+}
+
+.contenttable{
+	border: none;
+}
+
+.contenttable th{
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #e64343;
+    padding: 12px 20px;
+}
+
+.contenttable td{
+    color: #404548;
+    font-weight: 550;
+    background: #fff;
+    padding: 10px 20px;
+}
+
+.innertable{
+	border: none;
+}
+
+.innertable th{
+    color: #404548;
+    font-weight: 300;
+    text-transform: uppercase;
+    background: #E8E8E8;
+    padding: 5px 5px;
+}
+
+.innertable td{
+    color: #404548;
+    font-weight: 200;
+    background: #fff;
+    padding: 10px 20px;
+}

@@ -20,11 +20,17 @@ import java.util.stream.Collectors;
 @RestController
 public class QueryReportServiceImpl {
 
+	/**
+     	  * Method to fetch Country details based on country name sent in the parameters. 
+     	  * Handles GET request on path /query/countryName/{countryName}.
+     	  *
+     	  * @param strCountryName
+     	  * @return List<Country>
+     	  */ 
 	@GetMapping("/query/countryName/{countryName}")
 	public List<Country> getQueryResultForCountryName(@PathVariable("countryName") String strCountryName) {
 		List<Country> countryList = null;
 		try {
-			System.out.println("strCountryName: "+strCountryName);
 			countryList = QueryReportIO.getCountriesForCountryNameCode(true, strCountryName);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -32,6 +38,13 @@ public class QueryReportServiceImpl {
 		return countryList;
 	}
 
+	/**
+     	  * Method to fetch Country details based on country code sent in the parameters. 
+     	  * Handles GET request on path /query/countryCode/{countryCode}.
+     	  *
+     	  * @param strCountryCode
+     	  * @return List<Country>
+     	  */
 	@GetMapping("/query/countryCode/{countryCode}")
 	public List<Country> getQueryResultForCountryCode(@PathVariable("countryCode") String strCountryCode) {
 		List<Country> countries = null;
@@ -43,6 +56,12 @@ public class QueryReportServiceImpl {
 		return countries;
 	}
 
+	/**
+     	  * Method retrieves 10 countries with highest number of airports. 
+     	  * Handles GET request on path /report/highestairports.
+     	  *
+     	  * @return List<Country>
+     	  */ 
 	@GetMapping("/report/highestairports")
 	public List<Country> getCountriesWithHighestNumberOfAirports() {
 		List<Country> countries = null;
@@ -54,6 +73,12 @@ public class QueryReportServiceImpl {
 		return countries;
 	}
 
+	/**
+     	  * Method retrieves 10 countries with lowest number of airports. 
+     	  * Handles GET request on path /report/lowestairports.
+     	  *
+     	  * @return List<Country>
+     	  */
 	@GetMapping("/report/lowestairports")
 	public List<Country> getCountriesWithLowestNumberOfAirports() {
 		List<Country> countries = null;
@@ -65,6 +90,12 @@ public class QueryReportServiceImpl {
 		return countries;
 	}
 
+	/**
+     	  * Method retrieves runway types for all the countries. 
+     	  * Handles GET request on path /report/runwaytypes.
+     	  *
+     	  * @return List<RunwayDTO>
+     	  */
 	@GetMapping("/report/runwaytypes")
 	public List<RunwayDTO> getRunwayTypesForCountries() {
 		Map<String, String> mapOfRTypesForCountries = null;
@@ -84,6 +115,12 @@ public class QueryReportServiceImpl {
 		return null;
 	}
 
+	/**
+     	  * Method retrieves 10 most common runway identities. 
+     	  * Handles GET request on path /report/mostcommonrunway.
+     	  *
+     	  * @return List<String>
+     	  */
 	@GetMapping("/report/mostcommonrunway")
 	public List<String> getMostCommonRunwayIdent() {
 		List<String> runwayTypes = null;

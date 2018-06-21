@@ -195,11 +195,11 @@
             
             $scope.QueryName = function (queryName) {
             	$scope.IsQueryTableVisible = true;
-           	 $scope.IsReportContentVisible = false;
+           	 	$scope.IsReportContentVisible = false;
+           	 	alert(" Please wait a few moments to fetch the data.. \n Thanks for your patience.");
             	 $http.get('http://localhost:8080/query/countryName/'+$scope.queryName).
                  then(function(response) {
             		 $scope.querydata = response.data;
-            		 alert($scope.querydata);
                  }, function(error, status) {
                  	console.log("Failed", error, status);
             	 });
@@ -208,12 +208,11 @@
             
             $scope.QueryCode = function (queryCode) {
             	$scope.IsQueryTableVisible = true;
-           	 $scope.IsReportContentVisible = false;
+           	 	$scope.IsReportContentVisible = false;
+           		alert(" Please wait a few moments to fetch the data..\n Thanks for your patience.");
             	 $http.get('http://localhost:8080/query/countryCode/'+$scope.queryCode).
                  then(function(response) {
-                	 alert(response.data);
                      $scope.querydata = response.data;
-                     alert($scope.querydata);
                  });
                 
             }
@@ -221,8 +220,7 @@
             $scope.ReportData = function () {
             	 $scope.IsQueryContentVisible = false;
             	 $scope.IsReportContentVisible = true;
-            	 alert("Please wait a few moments to fetch the data..");
-            	 alert("Thanks for your patience");
+            	 alert(" Please wait a few moments to fetch the data..\n Thanks for your patience.");
 
             	 $http.get('http://localhost:8080/report/highestairports')
                  .then(function(response) {

@@ -56,7 +56,7 @@
 					<th>Runway</th>
 				</tr>
 				<tr ng-repeat="country in querydata track by $index">
-				<td colspan="country.airportsize">{{ country.CountryName }}</td>
+				<td>{{ country.CountryName }}</td>
 				  <td> 
 					<table align="center" class="innertable">
 						<tr>
@@ -67,7 +67,7 @@
 							<td>{{ airport.AirportName }}</td>
 							<td>{{ airport.AirportIdent }}</td>
 							<td>
-								<table align="center" class="innertable">
+								table align="center" class="innertable">
 									<tr>
 										<th>Runway Ident</th>
 										<th>Runway Type</th>

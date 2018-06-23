@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Assignment Query Report</title>
+<title>Query Report</title>
 <link rel="stylesheet" type="text/css"
 	href="assets/stylesheets/style.css">
 <script src="js/angular.min.js"></script>
@@ -13,11 +13,13 @@
 	<div style="width: 100%;" ng-controller="Controller">
 		
 		<div class="tab">
-			<span> </span> <span>
-			</span> <span> </span>
-			<h1 style="float:center">Assignment</h1>
-			<button class="tablinks" ng-click="ShowHide('Report')">Report</button>
+			<h1>Countries Airports Runways</h1>
+			
+		</div>
+		
+		<div class="navtab">
 			<button class="tablinks" ng-click="ShowHide('Query')">Query</button>
+			<button class="tablinks" ng-click="ShowHide('Report')">Report</button>			
 		</div>
 		<div class="tabcontent">
 			<div id="welcomecontent" ng-show = "IsWelcomeContentVisible">
@@ -47,24 +49,38 @@
 				<br>
 				<br>
 				<br>
-				<table class="queryresult" align="center" ng-show = "IsQueryTableVisible">
+				<table align="center" class="contenttable"  ng-show = "IsQueryTableVisible">
 				<tr>
 					<th>Country</th>
-					<th>Airport</th>
-					<th>Runway</th>
+					<th>Airports and Runways</th>
 				</tr>
 				<tr ng-repeat="country in querydata track by $index">
-				<td>{{ country.CountryName }}</td>
+				<td>{{ country.name }}</td>
 				  <td> 
-					<!--<table class="queryresult">
-						<tr ng-repeat="airport in {{ country.Airports }}">
-							<td>{{ airport.AirportName }}</td>
-							<td>{{ airport.AirportIdent }}</td>
+					<table align="center" class="innertable">
+						<tr>
+							<th>Airport Name</th>
+							<th>Airport Ident</th> 
 						</tr>
-					</table> -->
+						<tr ng-repeat="airport in country.airports track by $index" cellpadding="0" cellspacing="0">
+							<td>{{ airport.name }}</td>
+							<td>{{ airport.ident }}</td>
+							<td>
+								<table align="center" class="innertable">
+									<tr>
+										<th>Runway Ident</th>
+										<th>Runway Type</th>
+									</tr>
+									<tr ng-repeat="runway in airport.runways track by $index" cellpadding="0" cellspacing="0">
+										<td>{{ runway.le_ident }}</td>
+										<td>{{ runway.surface }}</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table> 
 					
 				</td>
-				<td></td>
 				</tr>
 				</table>
 
@@ -72,36 +88,16 @@
 			<div id="reportcontent" ng-show = "IsReportContentVisible">
 				<br></br>
 				<br></br>
-				<table class="contenttable" align="center">
-				<tr>
-					<th>Name</th>
-				</tr>
-				<tr ng-repeat="friend in friends track by $index">
-					<td>{{ friend.name }}</td>
-				</tr>
-				</table>
-				
-				<table class="contenttable" align="center">
-				<tr>
-					<th>Country</th>
-					<th>Number of Airports</th>
-				</tr>
-				<tr ng-repeat="counrtyj in counrtyjson track by $index">
-					<td>{{ counrtyj.CountryName }}</td>
-				 	<td>{{ counrtyj.AirportCount }}</td>
-				</tr>
-				</table>
-				<br></br>
 				<h3 align="center">Countries with Highest number of Airports</h3>
 				<br></br>
 				<table class="contenttable" align="center">
 				<tr>
-					<th>Country</th>
-					<th>Number of Airports</th>
+					<th align="center">Country</th>
+					<th align="center">Number of Airports</th>
 				</tr>
 				<tr ng-repeat="hacountry in highestairport track by $index">
-					<td>{{ hacountry.CountryName }}</td>
-				 	<td>{{ hacountry.AirportCount }}</td>
+					<td align="center">{{ hacountry.code }}</td>
+				 	<td align="center">{{ hacountry.airports.length}}</td>
 				</tr>
 				</table>
 				
@@ -110,38 +106,24 @@
 				<br></br>
 				<table class="contenttable" align="center">
 				<tr>
-					<th>Country</th>
-					<th>Number of Airports</th>
+					<th align="center">Country</th>
+					<th align="center">Number of Airports</th>
 				</tr>
 				<tr ng-repeat="lacountry in lowestairport track by $index">
-					<td>{{ lacountry.CountryName }}</td>
-				 	<td>{{ lacountry.AirportCount }}</td>
+					<td align="center">{{ lacountry.code }}</td>
+				 	<td align="center">{{ lacountry.airports.length}}</td>
 				</tr>
 				</table>
 				
-				<br></br>
-				<h3 align="center">Runway Types for Countries</h3>
-				<br></br>
-				<table class="contenttable" align="center">
-				<tr>
-					<th>Country</th>
-					<th>Runway Types</th>
-				</tr>
-				<tr ng-repeat="rtcountry in runwaytypes track by $index">
-					<td>{{ rtcountry.CountryName }}</td>
-				 	<td>{{ rtcountry.RunwayTypes }}</td>
-				</tr>
-				</table>
-				
-				<br></br>
+				<br></br>				
 				<h3 align="center">Top 10 most common Runway Identifications</h3>
 				<br></br>
 				<table class="contenttable" align="center">
 				<tr>
-					<th>Runway Identification</th>
+					<th align="center">Runway Identification</th>
 				</tr>
 				<tr ng-repeat="runwayI in mostcommonrunway track by $index">
-					<td>{{ runwayI.RunwayIdent }}</td>
+					<td align="center">{{ runwayI }}</td>
 				</tr>
 				</table>
 			</div>
@@ -152,6 +134,9 @@
 
 <script type="text/javascript">
         var app = angular.module('Assignment', [])
+        app.config(['$qProvider', function ($qProvider) {
+    	$qProvider.errorOnUnhandledRejections(false);
+		}]);
         app.controller('Controller', function ($scope,$http) {
         	$scope.queryName='';
         	$scope.queryCode='';
@@ -195,67 +180,56 @@
             }
             
             $scope.QueryName = function (queryName) {
-                
-            	 $http.get('http://localhost:8080/assignment.queryreport.rest/rest/queryreportservice/query/countryName/'+$scope.queryName).
+            	$scope.IsQueryTableVisible = true;
+           	 	$scope.IsReportContentVisible = false;
+           	 	alert(" Please wait a few moments to fetch the data.. \n Thanks for your patience.");
+            	 $http.get('http://localhost:8080/query/countryName/'+$scope.queryName).
                  then(function(response) {
-                	 alert("Query Name");
-                	 $scope.IsQueryTableVisible = true;
-                	 $scope.IsReportContentVisible = false;
-                     $scope.querydata = response.data;
-                     alert($scope.querydata);
-                 });
+            		 $scope.querydata = response.data;
+                 }, function(error, status) {
+                 	console.log("Failed", error, status);
+            	 });
                 
             }
             
             $scope.QueryCode = function (queryCode) {
-                
-            	 $http.get('http://localhost:8080/assignment.queryreport.rest/rest/queryreportservice/query/countryCode/'+$scope.queryCode).
+            	$scope.IsQueryTableVisible = true;
+           	 	$scope.IsReportContentVisible = false;
+           		alert(" Please wait a few moments to fetch the data..\n Thanks for your patience.");
+            	 $http.get('http://localhost:8080/query/countryCode/'+$scope.queryCode).
                  then(function(response) {
-                	 alert("Query Code");
-                	 $scope.IsQueryTableVisible = true;
-                	 $scope.IsReportContentVisible = false;
                      $scope.querydata = response.data;
-                     alert($scope.querydata);
                  });
                 
             }
             
             $scope.ReportData = function () {
-            	 alert("Report!");
             	 $scope.IsQueryContentVisible = false;
             	 $scope.IsReportContentVisible = true;
-            	 $scope.highestairport=[];
-            	 var varhighairport=[];
-            	 $http.get('http://localhost:8080/assignment.queryreport.rest/rest/queryreportservice/report/highestairports').
-                 then( function(response) {
+            	 alert(" Please wait a few moments to fetch the data..\n Thanks for your patience.");
+
+            	 $http.get('http://localhost:8080/report/highestairports')
+                 .then(function(response) {
                 	 $scope.highestairport = response.data;
-                	 varhighairport=response.data;
-                	 alert($scope.highestairport);
-                	 alert(varhighairport);
-                 });
-            	 
-            	 alert($scope.highestairport);
-            	 alert(varhighairport);
-            
-            	$http.get('http://localhost:8080/assignment.queryreport.rest/rest/queryreportservice/report/lowestairports').
+                 }, function(error, status) {
+                 	console.log("Failed", error, status);
+            	 });
+
+            	$http.get('http://localhost:8080/report/lowestairports').
             	then(function(response) {
                 	$scope.lowestairport = response.data;
            		});
             
-            	$http.get('http://localhost:8080/assignment.queryreport.rest/rest/queryreportservice/report/runwaytypes').
+            	/*$http.get('http://localhost:8080/report/runwaytypes').
             	then(function(response) {
                 	$scope.runwaytypes = response.data;
-            	});
+            	});*/
             
-            	$http.get('http://localhost:8080/assignment.queryreport.rest/rest/queryreportservice/report/mostcommonrunway').
+            	$http.get('http://localhost:8080/report/mostcommonrunway').
             	then(function(response) {
                 	$scope.mostcommonrunway = response.data;
             	});
-            	$scope.friends = [{"name": "Peter"},{"name":"Laila"},{name:"Rosy"}];
-            	$scope.counrtyjson = [{"CountryName":"United States","AirportCount":21365},{"CountryName":"Brazil","AirportCount":3832},{"CountryName":"Canada","AirportCount":2395},{"CountryName":"Australia","AirportCount":1894},{"CountryName":"France","AirportCount":785},{"CountryName":"Argentina","AirportCount":711},{"CountryName":"Colombia","AirportCount":699},{"CountryName":"Germany","AirportCount":689},{"CountryName":"Venezuela","AirportCount":591},{"CountryName":"Russia","AirportCount":560}];
             }
-            
         });
  </script>
-
 </html>

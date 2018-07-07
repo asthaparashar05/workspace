@@ -5,8 +5,8 @@ Contains functions to fetch the whole data or single record by id for each resou
 
 There are 7 resources People, Films, Starships, Vehicles, Species, Planets and Root.
 
-### Below functions are supported by the wrapper:
-##### getAllForResource(resource):
+## Below functions are supported by the wrapper:
+#### getAllForResource(resource):
 ---
 Returns the whole data for the resource in the argument.
 Example:
@@ -14,7 +14,7 @@ Example:
 getAllForResource("people")
 ``` 
 
-##### getPeopleById(id): 
+#### getPeopleById(id): 
 ---
 Returns a single people resource for the id passed as parameter.
 Example:
@@ -22,7 +22,7 @@ Example:
 getPeopleById(1)
 ``` 
 
-##### getFilmById(id):
+#### getFilmById(id):
 ---
 Returns a single film resource for the id passed as parameter.
 Example:
@@ -30,7 +30,7 @@ Example:
 getFilmById(1)
 ``` 
 
-##### getStarshipById(id):
+#### getStarshipById(id):
 ---
 Returns a single starship resource for the id passed as parameter.
 Example:
@@ -38,7 +38,7 @@ Example:
 getStarshipById(1)
 ```
 
-##### getVehicleById(id):
+#### getVehicleById(id):
 ---
 Returns a single vehicle resource for the id passed as parameter.
 Example:
@@ -46,7 +46,7 @@ Example:
 getVehicleById(1)
 ```
 
-##### getSpeciesById(id):
+#### getSpeciesById(id):
 ---
 Returns a single species resource for the id passed as parameter.
 Example:
@@ -54,7 +54,7 @@ Example:
 getSpeciesById(1)
 ```
 
-##### getPlanetById(id):
+#### getPlanetById(id):
 ---
 Returns a single planet resource for the id passed as parameter.
 Example:

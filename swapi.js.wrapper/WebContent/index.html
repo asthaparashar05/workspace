@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SWAPI Wrapper</title>
+<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+
+<script src="lib/swapi-starwars.js"></script>
+</head>
+<body>
+	<div class="wrapper" style="width: 100%;">
+		<div class="heading">
+			<h1>SWAPI Wrapper</h1>
+		</div>
+		
+		<button class="tablinks" onclick="getAllResources()">Request All Resources</button>
+		<br></br>
+		<textarea id="allResources" rows="20" cols="90"></textarea>
+		<br></br>
+		<button class="tablinks" onclick="getAllForResource('people')">Request Resource</button>
+		<br></br>
+		<textarea id="resource" rows="20" cols="90"></textarea>
+		<br></br>
+		<button class="tablinks" onclick="getPeopleById(1)">Request People By Id</button>
+		<br></br>
+		<textarea id="people" rows="20" cols="90"></textarea>
+		<br></br>
+		<button class="tablinks" onclick="getFilmById(2)">Request Film By Id</button>
+		<br></br>
+		<textarea id="films" rows="20" cols="90"></textarea>
+		<br></br>
+		<button class="tablinks" onclick="getStarshipById(3)">Request Starship By Id</button>
+		<br></br>
+		<textarea id="starships" rows="20" cols="90"></textarea>
+		<br></br>
+		<button class="tablinks" onclick="getVehicleById(4)">Request Vehicle By Id</button>
+		<br></br>
+		<textarea id="vehicles" rows="20" cols="90"></textarea>
+		<br></br>
+		<button class="tablinks" onclick="getSpeciesById(2)">Request Species By Id</button>
+		<br></br>
+		<textarea id="species" rows="20" cols="90"></textarea>
+		<br></br>
+		<button class="tablinks" onclick="getPlanetById(3)">Request Planet By Id</button>
+		<br></br>
+		<textarea id="planets" rows="20" cols="90"></textarea>
+		
+	</div>
+</body>
+</html>

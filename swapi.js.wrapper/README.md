@@ -69,7 +69,7 @@ getPlanetById(1)
 
 ### getReourceBySearchFields(resourcePath,searchValue):
 
-Returns set of resources for the resource given as argument having the value of search fields as ssssearchValue argument.
+Returns set of resources for the resource as the given resourcePath argument and having the value of search fields as the searchValue argument.
 Example:
 ```javascript
 getReourceBySearchFields('people','Luke')

@@ -24,7 +24,7 @@ It has functions to access all the APIs provided by SWAPI to access its resource
 
 The functions are described below in detail to help you understand and use the library.
 
-### * getAllResources:
+* getAllResources:
 
 This function internally calls a method which calls the root URL and returns the data of Root resource.
 It internally calls the URL `https://swapi.co/api/`
@@ -46,7 +46,7 @@ Sample output:
 }
 ```
 
-### * getAllForResource:
+* getAllForResource:
 
 This function takes resource name as argument and returns the whole data of that resource. You can further use this data to sort or compare or take other actions as you wish.
 It internally calls the URL `https://swapi.co/api/{resource_name}/`
@@ -60,7 +60,7 @@ Sample output:
 ```
 ```
 
-### * getPeopleById:
+* getPeopleById:
 
 This function takes an id as argument and returns a single People resource with the given id.
 It internally calls the URL `https://swapi.co/api/people/{id}/`
@@ -103,7 +103,7 @@ Sample output:
 }
 ```
 
-### * getFilmById:
+* getFilmById:
 
 This function takes an id as argument and returns a single Film resource with the given id.
 It internally calls the URL `https://swapi.co/api/films/{id}/`
@@ -148,7 +148,7 @@ Sample output:
 }
 ```
 
-### * getStarshipById:
+* getStarshipById:
 
 This function takes an id as argument and returns a single Starship resource with the given id.
 It internally calls the URL `https://swapi.co/api/starships/{id}/`
@@ -184,7 +184,7 @@ Sample output:
 }
 ```
 
-### * getVehicleById:
+* getVehicleById:
 
 This function takes an id as argument and returns a single Starship resource with the given id.
 It internally calls the URL `https://swapi.co/api/vehicles/{id}/`
@@ -218,7 +218,7 @@ Sample output:
 }
 ```
 
-### * getSpeciesById:
+* getSpeciesById:
 
 This function takes an id as argument and returns a single Starship resource with the given id.
 It internally calls the URL `https://swapi.co/api/species/{id}/`
@@ -254,7 +254,7 @@ Sample output:
 }
 ```
 
-### * getPlanetById:
+* getPlanetById:
 
 This function takes an id as argument and returns a single Starship resource with the given id.
 It internally calls the URL `https://swapi.co/api/planets/{id}/`
@@ -290,7 +290,7 @@ Sample output:
 }
 ```
 
-### * getReourceBySearchFields:
+* getReourceBySearchFields:
 
 This function takes resource name and value of search field as arguments and returns a set of resources having the given search field value. It uses use case-insensitive partial matches and internally calls the URL `https://swapi.co/api/{resourceName}/?search={searchFieldValue}`
 

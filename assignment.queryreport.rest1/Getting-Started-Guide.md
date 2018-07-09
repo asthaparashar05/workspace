@@ -322,3 +322,7 @@ Sample output:
     "url": "https://swapi.co/api/planets/1/"
 }
 ```
+
+## Original SWAPI Documentation:
+
+Complete [SWAPI](https://swapi.co/) documentation can be found at [https://swapi.co/documentation](https://swapi.co/documentation)

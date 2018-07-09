@@ -24,7 +24,7 @@ It has functions to access all the APIs provided by SWAPI to access its resource
 
 The functions are described below in detail to help you understand and use the library.
 
-* getAllResources:
+* __getAllResources:__
 
 This function internally calls a method which calls the root URL and returns the data of Root resource.
 It internally calls the URL `https://swapi.co/api/`

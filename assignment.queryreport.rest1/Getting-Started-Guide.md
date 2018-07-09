@@ -13,7 +13,7 @@ It provides an easy interface to access the complete resource data or resources 
   
 ## Installation
 
-No installation needed. There is a Javascript Library which you can use directly by placing in your project or extended it based on the requirement.
+No installation needed. There is a Javascript Library which you can use directly by placing it in your project or extending it based on the requirement.
 
   
 ## How to use
@@ -24,12 +24,11 @@ It has functions to access all the APIs provided by SWAPI to access its resource
 
 The functions are described below in detail to help you understand and use the library.
 
-<enter>
 
 * __getAllResources:__
 
 This function internally calls a method which calls the root URL and returns the data of Root resource.
-It internally calls the URL `https://swapi.co/api/`
+URL `https://swapi.co/api/`
 
 Method Call:
 ```javascript

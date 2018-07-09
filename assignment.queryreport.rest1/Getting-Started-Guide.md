@@ -11,12 +11,12 @@ SWAPI has 6 resources, People, Films, Starships, Species, Vehicles and Planet an
 It provides an easy interface to access the complete resource data or resources based id or search fields by API URLs. The response data is in simple JSON format which you can easily play around with.
 
   
-## Installation
+## How to use
 
 No installation needed. There is a Javascript Library which you can use directly by placing it in your project or extending it based on the requirement.
 
   
-## How to use
+## Description
 
 The project provides a basic Javascript library `WebContent/lib/swapi-starwars.js` which can be directly used and extended.
 

@@ -1,7 +1,7 @@
 # Wrapper for SWAPI - Star Wars API
 
 Basic wrapper for [SWAPI](https://swapi.co/) to access all the available resources.
-Contains Javascript library to fetch the whole data or single record by id for each resource.
+Contains Javascript library to fetch the whole data or single resource by id or set of resources by search fields for each resource.
 
 There are 7 resources People, Films, Starships, Vehicles, Species, Planets and Root.
 
@@ -65,4 +65,12 @@ Returns a single planet resource for the id passed as parameter.
 Example:
 ```javascript
 getPlanetById(1)
+```
+
+### getReourceBySearchFields(resourcePath,searchValue):
+
+Returns set of resources for the resource given as argument having the value of search fields as ssssearchValue argument.
+Example:
+```javascript
+getReourceBySearchFields('people','Luke')
 ```

@@ -35,10 +35,16 @@ var module = function () {
 	  sendRequest(swapiApiURL + resourcePath + '/'+id+'/', data);
   }
   
+  //To get records by search fields for a resource
+  function getReourceBySearchFields(resourcePath,searchValue,data) {
+	  sendRequest(swapiApiURL + resourcePath + '/?search='+searchValue, data);
+  }
+  
   return{
 	  getAllResources: getAllResources,
 	  getAllForResource:  getAllForResource,
-	  getResourceById: getResourceById 
+	  getResourceById: getResourceById, 
+	  getReourceBySearchFields: getReourceBySearchFields
   };
 
 }();
@@ -63,7 +69,7 @@ function getAllForResource(resourcePath) {
 	});
 }
 
-//To a single record for people resource by id
+//To get a single record for people resource by id
 function getPeopleById(id) {
 	module.getResourceById('people',id,function(data) {
 		//Logging the response data on console and assigning it to a DOM element. Below code in the function can be changed as per the requirement.
@@ -73,7 +79,7 @@ function getPeopleById(id) {
 	});
 }
 
-//To a single record for films resource by id
+//To get a single record for films resource by id
 function getFilmById(id) {
 	module.getResourceById('films',id,function(data) {
 		//Logging the response data on console and assigning it to a DOM element. Below code in the function can be changed as per the requirement.
@@ -83,7 +89,7 @@ function getFilmById(id) {
 	});
 }
 
-//To a single record for starships resource by id
+//To get a single record for starships resource by id
 function getStarshipById(id) {
 	module.getResourceById('starships',id,function(data) {
 		//Logging the response data on console and assigning it to a DOM element. Below code in the function can be changed as per the requirement.
@@ -93,7 +99,7 @@ function getStarshipById(id) {
 	});
 }
 
-//To a single record for vehicles resource by id
+//To get a single record for vehicles resource by id
 function getVehicleById(id) {
 	module.getResourceById('vehicles',id,function(data) {
 		//Logging the response data on console and assigning it to a DOM element. Below code in the function can be changed as per the requirement.
@@ -103,7 +109,7 @@ function getVehicleById(id) {
 	});
 }
 
-//To a single record for species resource by id
+//To get a single record for species resource by id
 function getSpeciesById(id) {
 	module.getResourceById('species',id,function(data) {
 		//Logging the response data on console and assigning it to a DOM element. Below code in the function can be changed as per the requirement.
@@ -113,12 +119,22 @@ function getSpeciesById(id) {
 	});
 }
 
-//To a single record for planets resource by id
+//To get a single resource for planets by id
 function getPlanetById(id) {
 	module.getResourceById('planets',id,function(data) {
 		//Logging the response data on console and assigning it to a DOM element. Below code in the function can be changed as per the requirement.
 		console.log("getPlanetById data", data);
 		var stringData=JSON.stringify(data, undefined, 4);
 		document.getElementById("planets").innerHTML = stringData;
+	});
+}
+
+//To get resources based on the value of search fields
+function getReourceBySearchFields(resourcePath,searchValue) {
+	module.getReourceBySearchFields(resourcePath,searchValue,function(data) {
+		//Logging the response data on console and assigning it to a DOM element. Below code in the function can be changed as per the requirement.
+		console.log("getReourceBySearchField data", data);
+		var stringData=JSON.stringify(data, undefined, 4);
+		document.getElementById("search").innerHTML = stringData;
 	});
 }

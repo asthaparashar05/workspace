@@ -18,6 +18,7 @@ Example:
 ```javascript
 getAllForResource("people")
 ``` 
+This will return all the people resources present in SWAPI data source.
 
 ### getPeopleById(id): 
 
@@ -26,6 +27,7 @@ Example:
 ```javascript
 getPeopleById(1)
 ``` 
+This will return the Person – ‘Luke Skywalker’ and all its details as it has Id 1.
 
 ### getFilmById(id):
 
@@ -34,30 +36,34 @@ Example:
 ```javascript
 getFilmById(1)
 ``` 
+This will return the Film – ‘A New Hope’ and all the other attributes of the resource.
 
 ### getStarshipById(id):
 
 Returns a single starship resource for the id passed as parameter.
 Example:
 ```javascript
-getStarshipById(1)
+getStarshipById(9)
 ```
+This will return the Starship – ‘Death Star’ and all its attributes.
 
 ### getVehicleById(id):
 
 Returns a single vehicle resource for the id passed as parameter.
 Example:
 ```javascript
-getVehicleById(1)
+getVehicleById(4)
 ```
+This will return the Vehicle – ‘Sand Crawler’ and all its attributes.
 
 ### getSpeciesById(id):
 
 Returns a single species resource for the id passed as parameter.
 Example:
 ```javascript
-getSpeciesById(1)
+getSpeciesById(3)
 ```
+This will return the Species – ‘Wookie’ and all its attributes.
 
 ### getPlanetById(id):
 
@@ -66,6 +72,7 @@ Example:
 ```javascript
 getPlanetById(1)
 ```
+This will return the Planet – ‘Tatooine’ and all its attributes.
 
 ### getReourceBySearchFields(resourcePath,searchValue):
 
@@ -74,3 +81,8 @@ Example:
 ```javascript
 getReourceBySearchFields('people','Luke')
 ```
+This will return the People resource with name – ‘Luke Skywalker’ and all its attributes.
+
+---
+
+There is also a `Getting-Started-Guide` attached to the project which you use to understand and how to use the library better.

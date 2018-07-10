@@ -85,4 +85,4 @@ This will return the People resource with name – ‘Luke Skywalker’ and all its at
 
 ---
 
-There is also a `Getting-Started-Guide` attached to the project which you use to understand and how to use the library better.
+There is also a `Getting-Started-Guide` attached to the project which you can use to understand and how to use the library better.

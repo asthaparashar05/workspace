@@ -3,9 +3,9 @@
 Basic wrapper for [SWAPI](https://swapi.co/) to access all the available resources.
 Contains Javascript library to fetch the whole data or single resource by id or set of resources by search fields for each resource.
 
-There are 7 resources People, Films, Starships, Vehicles, Species, Planets and Root.
+There are 7 resources - People, Films, Starships, Vehicles, Species, Planets and Root.
 
-## Below functions are supported by the wrapper:
+## The wrapper provides following cool functions:
 
 ### getAllResources():
 
